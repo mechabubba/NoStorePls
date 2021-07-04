@@ -2,7 +2,7 @@ name: NoStorePls
 description: Simple plugin that prevents storage of certain items in certain containers.
 author: mechabubba
 main: me.mechabubba.nostorepls.NoStorePls
-version: 0.0.1
+version: 1.0.0
 api-version: 1.17
 commands:
   nsp:
