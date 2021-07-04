@@ -120,7 +120,7 @@ public class NoStorePls extends JavaPlugin implements Listener {
                 }
             }
 
-            if(items.contains(item.getType().toString())) {
+            else if(items.contains(item.getType().toString())) {
                 logStorageAttempt(item, inv, event.getWhoClicked(), false);
                 event.setCancelled(true);
                 return;
@@ -141,7 +141,20 @@ public class NoStorePls extends JavaPlugin implements Listener {
                 Map.Entry pair = (Map.Entry) it.next();
                 ItemStack item = (ItemStack) pair.getValue();
 
-                if(items.contains(item.getType().toString())) {
+                ShulkerBox box  = testShulker(item);
+                if(box instanceof ShulkerBox) {
+                    Inventory boxInv = box.getInventory();
+                    ItemStack[] itemStacks = boxInv.getContents();
+                    for(ItemStack _item : itemStacks) {
+                        if(_item != null && items.contains(_item.getType().toString())) {
+                            logStorageAttempt(_item, inv, event.getWhoClicked(), true);
+                            event.setCancelled(true);
+                            return;
+                        }
+                    }
+                }
+
+                else if(items.contains(item.getType().toString())) {
                     logStorageAttempt(item, inv, event.getWhoClicked(), false);
                     event.setCancelled(true);
                     return;
