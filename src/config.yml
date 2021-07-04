@@ -1,0 +1,17 @@
+# NoStorePls by mechabubba
+# Repository: https://github.com/mechabubba/NoStorePls
+# Default config.yml.
+
+# Log attempts at storing an invalid item?
+# Mainly used to debug.
+logInvalidAttempts: false
+
+# Add items to this list that you want blocked.
+# Use values from the enums listed here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+items:
+  - "DRAGON_EGG"
+
+# Add containers to this list that you want to block certain item transfers.
+# Use values from the enums listed here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryType.html
+containers:
+  - "ENDER_CHEST"
