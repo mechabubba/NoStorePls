@@ -3,6 +3,6 @@
 .idea/shelf/
 
 out/
-spigot-api-*.jar
+target/
 
 !.gitignore
