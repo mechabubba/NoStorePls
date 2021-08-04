@@ -5,12 +5,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.PluginDescriptionFile;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class NSPCommand implements CommandExecutor {
-    JavaPlugin plugin;
+    NoStorePls plugin;
 
-    public NSPCommand(JavaPlugin plugin) {
+    public NSPCommand(NoStorePls plugin) {
         super();
         this.plugin = plugin;
     }
@@ -28,6 +27,7 @@ public class NSPCommand implements CommandExecutor {
             switch(args[0]) {
                 case "reload":
                     plugin.reloadConfig();
+                    plugin.loadBlocklists();
                     sender.sendMessage("" + ChatColor.GREEN + "Reloaded NSP config!");
                     break;
                 default:
